@@ -14,21 +14,98 @@ body {
     width:80%;
     height: auto;
     border-radius:12px;
+    opacity:0;
 
     animation-timeline:view();
     animation-name: zoomScroll;
-    animation-range: entry 10% cover 50%;
+    animation-range: entry 50% cover 100%;
 }
 
 @keyframes zoomScroll {
     from {
         opacity:0.5;
-        transform: scale(0) translateY(50px);
+        transform: scale(0);
         filter: blur(10px);
     }
     to {
         opacity: 1;
-        transform: scale(1) translateY(0);
+        transform: scale(1);
         filter:blur(0);
+    }
+}
+
+.top {
+    position:relative;
+    opacity:0.6;
+}
+
+/*#title {
+    border: 5px solid gold;
+    border-radius: 20px;
+    overflow:hidden;
+}*/
+
+.titleShrink {
+    position:absolute;
+    top:60%;
+    left:45%;    
+
+    animation-timeline:view();
+    animation-name: shrinkScrollTitle;
+    animation-range: entry 0% cover 100%;
+
+}
+
+.titleZoom {
+    position:absolute;
+    top:70%;
+    left:25%;    
+
+    animation-timeline:view();
+    animation-name: zoomScrollTitle;
+    animation-range: entry 0% cover 100%;
+}
+
+@keyframes shrinkScrollTitle {
+    0% {
+        opacity:0;
+    }
+    20% {
+        opacity:0.5;
+        transform: scale(3);
+        filter: blur(0);
+    }
+    80% {
+        opacity: 1;
+        transform: scale(0);
+        filter:blur(10px);
+    }
+    100%{
+        opacity:1;
+        transform: scale(0);
+        filter: blur(10px);
+    }
+}
+
+@keyframes zoomScrollTitle {
+    0% {
+        opacity:0;
+        display:none;
+    }
+    20% {
+        display: inline;
+        opacity:0.5;
+        transform: scale(0);
+        filter: blur(10px);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1);
+        filter:blur(0);
+    }
+    100%{
+        opacity:1;
+        transform: scale(1);
+        filter: blur(0);
     }
 }
