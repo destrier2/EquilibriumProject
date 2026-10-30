@@ -3,6 +3,9 @@ body {
     color:white;
     padding:0;
     margin:0;
+    overflow-x: clip;
+    scroll-behavior:smooth;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 .fullImg {
@@ -80,7 +83,42 @@ body {
     }
 }
 
+/* Navigation Bar */
+
+.navbar {
+    position:sticky;
+    top:0;
+    width: 100vw;
+    align-self:start;
+    background-color:darkred;
+    z-index: 100;
+}
+
+.navTable {
+    display:inline-block;
+    padding: 20px;
+    width: 100vw;
+
+    .title {
+        width: 30%;
+    }
+
+    td {
+        width:20%;
+    }
+
+    a {
+        color:white;
+    }
+}
+
+
 /* Template stuff for main body */
+
+.sectionHead {
+    margin-left:10vw;
+
+}
 
 .textBox {
     background-color: rgba(255, 255, 255, 0.8);
@@ -147,6 +185,5 @@ body {
 }
 
 .section {
-    border:1px solid orange;
     display:flex;
 }
