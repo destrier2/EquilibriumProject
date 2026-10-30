@@ -1,5 +1,5 @@
 body {
-    background-color:black;
+    background-color:#370606;
     color:white;
     padding:0;
     margin:0;
@@ -97,15 +97,14 @@ body {
 
 .navTable {
     display:inline-block;
-    padding: 20px;
+    padding: 10px;
     width: 100vw;
 
     .title {
-        width: 30%;
+        width: 60%;
     }
-
     td {
-        width:20%;
+        padding-left:2vw;
     }
 
     a {
@@ -118,7 +117,7 @@ body {
 
 .sectionHead {
     margin-left:10vw;
-
+    height: 10vh;
 }
 
 .textBox {
@@ -126,9 +125,9 @@ body {
     border-radius: 10px;
     border: 3px solid gold;
     width: fit-content;
-    margin:5vw;
     padding: 1%;
     color: black;
+    display:inline-block;
 }
 
 .subscript {
@@ -146,13 +145,13 @@ body {
 }
 
 .floatRight {
-    width:fit-content;
-    margin-left:auto;
-    /*border: 5px solid white;*/
-    display:flex;
-    img {
-        margin-left:auto;
-    }
+    width: 50vw;
+    padding:0;
+    margin:0;
+    background-color:lightblue;
+    position:relative;
+    float:right;
+    border:5px solid blue;
 }
 
 .zoomScrollImg {
@@ -186,5 +185,7 @@ body {
 }
 
 .section {
-    display:flex;
+    width: 100vw;
+    height: 50vh;
+    border:10px solid white;
 }
