@@ -6,7 +6,7 @@
         <title>Blood pH</title>
         <style></style>
         <link rel="stylesheet" href="style.css">
-        <script src="script.js"></script>
+        <script src="script.js" defer></script>
 
     </head>
     <body>
@@ -40,9 +40,16 @@
 
         <h2 class="sectionHead" id="Three">Section Three</h2>
 
-        <img src="./images/BloodVesselWalls.png" style="transform:rotate(180deg); width:100vw;">
+        <div class="moleculeDiv" style="width:80vw; height:80vh; border: 5px solid white; position:relative;"> <!-- Molecules! -->
+            <span class="co2 hidden">100 100</span>
+            <span class="h2o hidden">200 100</span>
+        </div>
+
+        <button id="test" style="padding:10px; border-radius:10px; background-color:#f7cac9;">Test</button>
+
+        <img src="./images/BloodVesselWalls.png" style="transform:rotate(180deg); min-width:100vw;">
         <span style="display:block;background-color:#f1c9c9; height:50vh; width:120vw; margin:-80px;"></span>
-        <img src="./images/BloodVesselWalls.png" style="width:100vw;">
+        <img src="./images/BloodVesselWalls.png" style="min-width:100vw;">
 
         <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><p>hello world</p>
     </body>

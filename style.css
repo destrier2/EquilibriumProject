@@ -5,8 +5,11 @@ body {
     margin:0;
     overflow-x: clip;
     overflow-y: auto;
-    scroll-behavior:smooth;
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+html {
+    scroll-behavior:smooth;
 }
 
 .fullImg {
@@ -145,7 +148,7 @@ body {
 }
 
 .floatRight {
-    width: 50vw;
+    max-width: 50vw;
     padding:0;
     margin:0;
     background-color:lightblue;
@@ -188,4 +191,39 @@ body {
     width: 100vw;
     height: 50vh;
     border:10px solid white;
+}
+
+.hidden {
+    display:none;
+}
+
+.circle {
+    border-radius:50%;
+    display:flex; /*Make it flex so that the text can be vertically centered too*/
+    align-items: center;
+    justify-content:center;
+}
+
+.oxygen {
+    background-color:red;
+    color:black;
+    width:50px;
+    height:50px;
+    position:absolute;
+}
+
+.carbon {
+    background-color:black;
+    color:white;
+    width:70px;
+    height:70px;
+    position:absolute;
+}
+
+.hydrogen {
+    background-color:white;
+    color:black;
+    width:40px;
+    height:40px;
+    position:absolute;
 }
