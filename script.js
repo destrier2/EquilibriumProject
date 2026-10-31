@@ -11,6 +11,10 @@ class CO2 {
         this.c = c;
         this.o2 = o2;
     }
+
+    getLocation() {
+        return [this.x, this.y];
+    }
 }
 
 class H2O {
@@ -23,19 +27,48 @@ class H2O {
     }
 
     combine(combineWith) { //combineWith is the co2 element that it's supposed to combine with
+        console.log(`Combining ${this.getLocation()} with ${combineWith.getLocation()}`)
+        let dist = getDistance(this.getLocation(), combineWith.getLocation());
+        if (dist <= 100) { //Close enough to collide
+            //Start the collision animation
+            //Calculate the final values, then move each element a few pixels that way?
+            //Just modify the values in the html divs, then re-render the items
+        }
+    }
 
+    getLocation() {
+        return [this.x, this.y];
     }
 }
 
 document.getElementById("test").addEventListener("click", myFunction);
 
 function myFunction() {
-    
+    co2s.forEach(co2 => {
+        let pos = co2.getLocation();
+        let minDist = Infinity;
+        let index = -1; //Negative for none close enough
+        for (let i = 0; i < h2os.length; i++) {
+            let h2oPos = h2os[i].getLocation();
+            let dist = getDistance(pos, h2oPos);
+            if (minDist > dist) {
+                minDist = dist; //Set new distance
+                index = i; //Set the new index
+            }
+        }
+        if (index >=0) {
+            h2os[index].combine(co2);
+        }
+    });
 }
 
 document.addEventListener("DOMContentLoaded", (event) => {
     addAll();
 });
+
+function getDistance([x1, y1], [x2, y2]) {
+    return Math.sqrt((x1-x2)**2+(y1-y2));
+}
 
 function addAll() {
     document.querySelectorAll(".co2").forEach(element => {
