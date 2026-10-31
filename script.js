@@ -1,7 +1,7 @@
 //Note: use backtick `` for embedding variables in a string
 
-let h2os;
-let co2s;
+let h2os = [];
+let co2s = [];
 
 class CO2 {
     constructor(x, y, o1, c, o2) {
@@ -23,7 +23,7 @@ class H2O {
     }
 
     combine(combineWith) { //combineWith is the co2 element that it's supposed to combine with
-        
+
     }
 }
 
@@ -72,7 +72,7 @@ function makeH2O(x, y) {
     h1.style=`top:${x+25}px; left:${y-20}px;`;
     h2.style=`top:${x+25}px; left:${y+25}px;`;
     o.style=`top:${x}px; left:${y}px;`;
-    h2os.add(new H2O(x, y, h1, o, h2));
+    h2os.push(new H2O(x, y, h1, o, h2));
     return [h1, o, h2];
 }
 
@@ -89,6 +89,6 @@ function makeCO2(x,y) {
     o1.classList.add("oxygen", "circle");
     o2.classList.add("oxygen", "circle");
     c.classList.add("carbon", "circle");
-    co2s.add(new CO2(x, y, o1, c, o2));
+    co2s.push(new CO2(x, y, o1, c, o2));
     return [o1, c, o2];
 }

@@ -148,18 +148,27 @@ html {
 }
 
 .floatRight {
-    max-width: 50vw;
+    
     padding:0;
     margin:0;
-    background-color:lightblue;
     position:relative;
     float:right;
-    border:5px solid blue;
+    /*background-color:lightblue;
+    border:5px solid blue;*/
+    max-width:50%;
+    height:100%;
+    object-fit:contain;
+
+    img {
+        max-width: 50vw;
+        max-height: 100%;
+        float:right;
+
+    }
 }
 
 .zoomScrollImg {
-    width:70%;
-    height: auto;
+    max-width:50%;
     opacity:0;
     margin:0;
     padding:0;
@@ -189,8 +198,8 @@ html {
 
 .section {
     width: 100vw;
-    height: 50vh;
-    border:10px solid white;
+    height:60vh;
+    /*border:10px solid white;*/
 }
 
 .hidden {
