@@ -28,7 +28,7 @@ class CO2 {
 }
 
 class H2CO3 {
-    constructor(x, y, o3, h1, h2, o1, o2, c, html) {
+    constructor(x, y, h1, o1, c, o2, o3, h2, html) {
         this.x = x;
         this.y = y;
         this.o1 = o1;
@@ -196,7 +196,9 @@ function makeH2O(x, y, element) {
     h1.style=`top:${y+25}px; left:${x-20}px;`;
     h2.style=`top:${y+25}px; left:${x+25}px;`;
     o.style=`top:${y}px; left:${x}px;`;
-    h2os.push(new H2O(x, y, h1, o, h2, element));
+    let molecule = new H2O(x, y, h1, o, h2, element);
+    molecule.draw();
+    h2os.push(molecule);
     return [h1, o, h2];
 }
 
@@ -207,13 +209,12 @@ function makeCO2(x,y, element) {
     o1.innerHTML = "O";
     o2.innerHTML = "O";
     c.innerHTML = "C";
-    o1.style=`top:${y+30}px; left:${x-25}px;`;
-    o2.style=`top:${y+30}px; left:${x+45}px;`;
-    c.style=`top:${y}px; left:${x}px;`;
     o1.classList.add("oxygen", "circle", "js");
     o2.classList.add("oxygen", "circle", "js");
     c.classList.add("carbon", "circle", "js");
-    co2s.push(new CO2(x, y, o1, c, o2, element));
+    let molecule = new CO2(x, y, o1, c, o2, element);
+    molecule.draw();
+    co2s.push(molecule);
     return [o1, c, o2];
 }
 
@@ -230,18 +231,14 @@ function makeH2CO3(x, y, element) {
     o3.innerHTML="O";
     h1.innerHTML="H";
     h2.innerHTML="H";
-    o1.style=`top:${y+30}px; left:${x-25}px;`;
-    o2.style=`top:${y+30}px; left:${x+45}px;`;
-    c.style=`top:${y}px; left:${x}px;`;
-    o3.style=`top:${y-35}px; left:${x+10}px;`
-    h1.style=`top:${y+10}px; left:${x-45}px;`
-    h2.style=`top:${y+10}px; left:${x+75}px;`
     o1.classList.add("oxygen", "circle", "js");
     o2.classList.add("oxygen", "circle", "js");
     c.classList.add("carbon", "circle", "js");
     o3.classList.add("oxygen", "circle", "js");
     h1.classList.add("hydrogen", "circle", "js");
     h2.classList.add("hydrogen", "circle", "js");
-    h2co3s.push(new H2CO3(x, y, o1, c, o2, o3, h1, h2, element));
+    let molecule = new H2CO3(x, y, h1, o1, c, o2, o3, h2, element);
+    molecule.draw();
+    h2co3s.push(molecule);
     return [h1, o1, c, o2, o3, h2];
 }
