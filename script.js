@@ -48,9 +48,9 @@ class H2CO3 {
         this.o1.style=`top:${this.y+30}px; left:${this.x-25}px;`;
         this.o2.style=`top:${this.y+30}px; left:${this.x+45}px;`;
         this.c.style=`top:${this.y}px; left:${this.x}px;`;
-        this.o3.style=`top:${this.y-35}px; left:${this.x+10}px;`
+        this.o3.style=`top:${this.y-35}px; left:${this.x+10}px; z-index:-1;`
         this.h1.style=`top:${this.y+10}px; left:${this.x-45}px;`
-        this.h2.style=`top:${this.y+10}px; left:${this.x+75}px;`
+        this.h2.style=`top:${this.y+10}px; left:${this.x+75}px; z-index:-1;`
     }
 }
 
@@ -71,18 +71,9 @@ class H2O {
             //Start the collision animation
             //Calculate the final values, then move each element a few pixels that way?
             //Just modify the values in the html divs, then re-render the items
-
-            /*o1.style=`top:${y+30}px; left:${x-25}px;`;
-            o2.style=`top:${y+30}px; left:${x+45}px;`;
-            c.style=`top:${y}px; left:${x}px;`;
-            o3.style=`top:${y-35}px; left:${x+10}px;`
-            h1.style=`top:${y+10}px; left:${x-45}px;`
-            h2.style=`top:${y+10}px; left:${x+75}px;`*/
             const center = combineWith.getLocation();
             const current = this.getLocation();
             let change = [0, 0];
-            //while (getDistance(this.getLocation(), center) > 10 && counter < 5000) {
-            //requestAnimationFrame(myfunctionhere);
             if (current[0] > center[0]) {
                 change[0] = -1;
             } else if (current[0] < center[0]) {
@@ -99,11 +90,41 @@ class H2O {
             this.draw();
             if (getDistance(this.getLocation(), center) > 10) {
                 animationId = requestAnimationFrame(() => this.combine(combineWith));
-            } else {
-                cancelAnimationFrame(animationId);
+            } else { //Start animation to move the oxygens and hydrogens
+                //cancelAnimationFrame(animationId);
+                //animationId = requestAnimationFrame(() => this.split(combineWith));
+                //Remove from h2o and from co2 list, add to carbonate list
+                h2os = h2os.filter(item => item != this);
+                co2s = co2s.filter(item => item != combineWith);
+                let molecule = new H2CO3(this.x, this.y, this.h1, combineWith.o1, combineWith.c, combineWith.o2, this.o, this.h2, null);
+                molecule.draw();
+                h2co3s.push(molecule);
             }
             
         }
+    }
+
+    split(combineWith) {
+        let change = [-15/20.0, -70/20.0, -10/20.0, 75/20.0, -60/20.0, 30/20.0];
+        let location = [25, 25, 0, 0, 25, -20];
+        console.log(change);
+        //20 iterations
+        for (let i = 0 ; i < 20; i++) {
+            for (let x=0; x<6; x++) {
+                location[x]+=change[x];
+            }
+            console.log(location);
+            this.drawTwo(location[0],location[1],location[2],location[3], location[4], location[5]);
+            animationId = requestAnimationFrame(() => this.drawTwo(location[0], location[1],location[2], location[3], location[4], location[5]));
+        }
+    }
+
+    drawTwo(a, b, c, d, e, f) {
+        console.log("Hello world");
+        this.h1.style=`top:${this.y+a}px; left:${this.x+b}px;`;
+        this.h2.style=`top:${this.y+c}px; left:${this.x+d}px;`;
+        this.o.style=`top:${this.y+e}px; left:${this.x+f}px;`;
+        //console.log(`Hello world ${this.y+a} left:${this.x+b} top:${this.y+c}px; left:${this.x+d}px top:${this.y+e} left:${this.x+f}`);
     }
 
     draw() {
