@@ -5,7 +5,7 @@ body {
     margin:0;
     overflow-x: clip;
     overflow-y: auto;
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 html {
@@ -120,16 +120,26 @@ html {
 
 .sectionHead {
     margin-left:10vw;
-    height: 10vh;
+    font-style:italic;
+    font-family:'Times New Roman', Times, serif;
+    font-size:x-large;
+}
+
+.title {
+    margin-left: 10vw;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+
+    .right {
+        margin:auto;
+        text-align:right;
+    }
 }
 
 .textBox {
-    background-color: rgba(255, 255, 255, 0.8);
-    border-radius: 10px;
-    border: 3px solid gold;
     width: fit-content;
-    padding: 1%;
-    color: black;
+    margin-left:10vw;
+    max-width:40vw;
+    color: white;
     display:inline-block;
 }
 
@@ -148,9 +158,10 @@ html {
 }
 
 .floatRight {
-    
     padding:0;
     margin:0;
+    margin-top:-10vh;
+    margin-right:5vw;
     position:relative;
     float:right;
     /*background-color:lightblue;
