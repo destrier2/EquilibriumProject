@@ -77,10 +77,11 @@ class Molecule {
 }
 
 class OH extends Molecule {
-    constructor(x, y, h, o) {
+    constructor(x, y, box, h, o) {
         super();
         this.x=x;
         this.y=y;
+        this.box=box;
         this.h=h;
         this.o=o;
     }
@@ -117,11 +118,11 @@ class OH extends Molecule {
                 ohs = ohs.filter(item => item != this);
                 this.makeUnDraggable();
                 combineWith.makeUnDraggable();
-                let molecule = new H2O(this.x, this.y, this.h, this.o, combineWith.h3);
+                let molecule = new H2O(this.x, this.y, this.box, this.h, this.o, combineWith.h3);
                 molecule.draw();
                 molecule.makeDraggable([this.h, this.o, combineWith.h3]);
                 h2os.push(molecule);
-                let moleculeTwo = new H2O(this.x, this.y, combineWith.h1, combineWith.o, combineWith.h2);
+                let moleculeTwo = new H2O(this.x, this.y, this.box, combineWith.h1, combineWith.o, combineWith.h2);
                 moleculeTwo.draw();
                 moleculeTwo.makeDraggable([combineWith.h1, combineWith.o, combineWith.h2]);
                 h2os.push(moleculeTwo);
@@ -136,10 +137,11 @@ class OH extends Molecule {
 }
 
 class H3O extends Molecule{
-    constructor(x, y, h1, o, h2, h3) {
+    constructor(x, y, box, h1, o, h2, h3) {
         super();
         this.x=x;
         this.y=y;
+        this.box=box;
         this.h1=h1;
         this.h2=h2;
         this.h3=h3;
@@ -182,25 +184,16 @@ class H3O extends Molecule{
                 this.makeUnDraggable();
                 hco3s = hco3s.filter(item => item != combineWith);
                 combineWith.makeUnDraggable();
-                let moleculeTwo = new H2O(this.x, this.y, combineWith.h1, this.o, this.h2);
+                let moleculeTwo = new H2O(this.x, this.y, this.box, combineWith.h1, this.o, this.h2);
                 moleculeTwo.draw();
                 moleculeTwo.makeDraggable([combineWith.h1, this.o, this.h2]);
                 h2os.push(moleculeTwo);
-                let molecule = new H2CO3(this.x, this.y, this.h1, combineWith.o1, combineWith.c, combineWith.o2, combineWith.o3, this.h3, null);
+                let molecule = new H2CO3(this.x, this.y, this.box, this.h1, combineWith.o1, combineWith.c, combineWith.o2, combineWith.o3, this.h3, null);
                 molecule.draw();
                 molecule.makeDraggable([this.h1, combineWith.o1, combineWith.c, combineWith.o2, combineWith.o3, this.h3]);
                 h2co3s.push(molecule);
                 animationId = requestAnimationFrame(()=> molecule.draw());
-                animationId = requestAnimationFrame(() => moveMolecule(moleculeTwo,0));
-
-                function moveMolecule(m, count) {
-                    if (count < 80) {
-                        m.x--;
-                        m.y--;
-                        m.draw();
-                        animationId = requestAnimationFrame(()=> moveMolecule(m, count+1));
-                    }
-                }
+                animationId = requestAnimationFrame(() => moveMolecule(moleculeTwo, 100, +1,0));
             }
             
         }
@@ -208,10 +201,11 @@ class H3O extends Molecule{
 }
 
 class HCO3 extends Molecule{
-    constructor(x, y, h1, o1, c, o2, o3, html) {
+    constructor(x, y, box, h1, o1, c, o2, o3, html) {
         super();
         this.x = x;
         this.y = y;
+        this.box = box;
         this.o1 = o1;
         this.c = c;
         this.o2 = o2;
@@ -230,10 +224,11 @@ class HCO3 extends Molecule{
 }
 
 class CO2 extends Molecule{
-    constructor(x, y, o1, c, o2, html) {
+    constructor(x, y, box, o1, c, o2, html) {
         super();
         this.x = x;
         this.y = y;
+        this.box = box;
         this.o1 = o1;
         this.c = c;
         this.o2 = o2;
@@ -248,10 +243,11 @@ class CO2 extends Molecule{
 }
 
 class H2CO3 extends Molecule{
-    constructor(x, y, h1, o1, c, o2, o3, h2, html) {
+    constructor(x, y, box, h1, o1, c, o2, o3, h2, html) {
         super();
         this.x = x;
         this.y = y;
+        this.box = box;
         this.o1 = o1;
         this.c = c;
         this.o2 = o2;
@@ -272,10 +268,11 @@ class H2CO3 extends Molecule{
 }
 
 class H2O extends Molecule{
-    constructor(x, y, h1, o, h2, html) {
+    constructor(x, y, box, h1, o, h2, html) {
         super();
         this.x = x;
         this.y = y;
+        this.box = box;
         this.h1 = h1;
         this.o = o;
         this.h2 = h2;
@@ -315,7 +312,7 @@ class H2O extends Molecule{
                 co2s = co2s.filter(item => item != combineWith);
                 this.makeUnDraggable();
                 combineWith.makeUnDraggable();
-                let molecule = new H2CO3(this.x, this.y, this.h1, combineWith.o1, combineWith.c, combineWith.o2, this.o, this.h2, null);
+                let molecule = new H2CO3(this.x, this.y, this.box, this.h1, combineWith.o1, combineWith.c, combineWith.o2, this.o, this.h2, null);
                 molecule.draw();
                 molecule.makeDraggable([this.h1, combineWith.o1, combineWith.c, combineWith.o2, this.o, this.h2]);
                 h2co3s.push(molecule);
@@ -353,25 +350,16 @@ class H2O extends Molecule{
                 h2co3s = h2co3s.filter(item => item != combineWith);
                 this.makeUnDraggable();
                 combineWith.makeUnDraggable();
-                let moleculeTwo = new H3O(this.x, this.y, combineWith.h1, this.o, this.h2, combineWith.h2);
+                let moleculeTwo = new H3O(this.x, this.y, this.box, combineWith.h1, this.o, this.h2, combineWith.h2);
                 moleculeTwo.draw();
                 moleculeTwo.makeDraggable([combineWith.h1, this.o, this.h2, combineWith.h2]);
                 h3os.push(moleculeTwo);
-                let molecule = new HCO3(this.x, this.y, this.h1, combineWith.o1, combineWith.c, combineWith.o2, combineWith.o3, null);
+                let molecule = new HCO3(this.x, this.y,this.box, this.h1, combineWith.o1, combineWith.c, combineWith.o2, combineWith.o3, null);
                 molecule.draw();
                 molecule.makeDraggable([this.h1, combineWith.o1, combineWith.c, combineWith.o2, combineWith.o3]);
                 hco3s.push(molecule);
                 animationId = requestAnimationFrame(()=> molecule.draw());
-                animationId = requestAnimationFrame(() => moveMolecule(moleculeTwo,0));
-
-                function moveMolecule(m, count) {
-                    if (count < 80) {
-                        m.x--;
-                        m.y--;
-                        m.draw();
-                        animationId = requestAnimationFrame(()=> moveMolecule(m, count+1));
-                    }
-                }
+                animationId = requestAnimationFrame(() => moveMolecule(moleculeTwo, 120, 1, 0));
             }
         }
     }
@@ -403,25 +391,16 @@ class H2O extends Molecule{
                 hco3s = hco3s.filter(item => item != combineWith);
                 this.makeUnDraggable();
                 combineWith.makeUnDraggable();
-                let moleculeTwo = new OH(this.x, this.y, combineWith.h1, this.o);
+                let moleculeTwo = new OH(this.x, this.y, this.box, combineWith.h1, this.o);
                 moleculeTwo.draw();
                 moleculeTwo.makeDraggable([combineWith.h1, this.o]);
                 ohs.push(moleculeTwo);
-                let molecule = new H2CO3(this.x, this.y, this.h1, combineWith.o1, combineWith.c, combineWith.o2, combineWith.o3, this.h2, null);
+                let molecule = new H2CO3(this.x, this.y, this.box, this.h1, combineWith.o1, combineWith.c, combineWith.o2, combineWith.o3, this.h2, null);
                 molecule.draw();
                 molecule.makeDraggable([this.h1, combineWith.o1, combineWith.c, combineWith.o2, combineWith.o3, this.h2]);
                 h2co3s.push(molecule);
                 animationId = requestAnimationFrame(()=> molecule.draw());
-                animationId = requestAnimationFrame(() => moveMolecule(moleculeTwo,0));
-
-                function moveMolecule(m, count) {
-                    if (count < 80) {
-                        m.x--;
-                        m.y--;
-                        m.draw();
-                        animationId = requestAnimationFrame(()=> moveMolecule(m, count+1));
-                    }
-                }
+                animationId = requestAnimationFrame(() => moveMolecule(moleculeTwo,150,1,0));
             }
         }
     }
@@ -442,6 +421,15 @@ class H2O extends Molecule{
 
 document.getElementById("test").addEventListener("click", myFunction);
 
+function clearAll() {
+    h2os = [];
+    co2s = [];
+    h2co3s = [];
+    h3os = [];
+    hco3s = [];
+    ohs = [];
+}
+
 function myFunction() {
     let h2oUsed = [];
     let co2Used = [];
@@ -456,7 +444,7 @@ function myFunction() {
         let minDist = minDistForReaction;
         let index = -1; //Negative for none close enough
         for (let i = 0; i < h2os.length; i++) {
-            if (!h2oUsed.includes(i) && !co2Used.includes(counter)) {
+            if (!h2oUsed.includes(i) && !co2Used.includes(counter) && co2.box == h2os[i].box) {
                 let h2oPos = h2os[i].getLocation();
                 let dist = getDistance(pos, h2oPos);
                 if (minDist > dist) {
@@ -478,7 +466,7 @@ function myFunction() {
         let minDist = minDistForReaction;
         let index = -1; //Negative for none close enough
         for (let i = 0; i < h2os.length; i++) {
-            if (!h2oUsed.includes(i) && !h2co3Used.includes(counter)) {
+            if (!h2oUsed.includes(i) && !h2co3Used.includes(counter) && h2os[i].box == h2co3.box) {
                 let h2oPos = h2os[i].getLocation();
                 let dist = getDistance(pos, h2oPos);
                 if (minDist > dist) {
@@ -501,7 +489,7 @@ function myFunction() {
         let minDist = minDistForReaction;
         let index = -1; //Negative for none close enough
         for (let i = 0; i < h3os.length; i++) {
-            if (!hco3Used.includes(i) && !h3oUsed.includes(counter)) {
+            if (!hco3Used.includes(i) && !h3oUsed.includes(counter) && hco3.box == h3os[i].box) {
                 let h3oPos = h3os[i].getLocation();
                 let dist = getDistance(pos, h3oPos);
                 if (minDist > dist) {
@@ -512,8 +500,8 @@ function myFunction() {
         }
         if (index >=0) {
             h3os[index].combineHCO3(hco3);
-            h3oUsed.push(counter);
-            hco3Used.push(index);
+            h3oUsed.push(index);
+            hco3Used.push(counter);
             console.log("Index is "+index);
         }
         counter++;
@@ -524,7 +512,7 @@ function myFunction() {
         let minDist = minDistForReaction;
         let index = -1; //Negative for none close enough
         for (let i = 0; i < h2os.length; i++) {
-            if (!hco3Used.includes(counter) && !h2oUsed.includes(i)) {
+            if (!hco3Used.includes(counter) && !h2oUsed.includes(i) && hco3.box == h2os[i].box) {
                 let h2oPos = h2os[i].getLocation();
                 let dist = getDistance(pos, h2oPos);
                 if (minDist > dist) {
@@ -546,7 +534,7 @@ function myFunction() {
         let minDist = minDistForReaction;
         let index = -1; //Negative for none close enough
         for (let i = 0; i < ohs.length; i++) {
-            if (!h3oUsed.includes(counter) && !ohUsed.includes(i)) {
+            if (!h3oUsed.includes(counter) && !ohUsed.includes(i) && h3o.box == ohs[i].box) {
                 let ohPos = ohs[i].getLocation();
                 let dist = getDistance(pos, ohPos);
                 if (minDist > dist) {
@@ -562,6 +550,15 @@ function myFunction() {
         }
         counter++;
     });
+}
+
+function moveMolecule(m, count, dx, dy) {
+    if (count >= 0) {
+        m.x+=dx;
+        m.y+=dy;
+        m.draw();
+        animationId = requestAnimationFrame(()=> moveMolecule(m, count-1, dx, dy));
+    }
 }
 
 document.addEventListener("DOMContentLoaded", (event) => {
@@ -604,8 +601,9 @@ function addAll() {
     });
     document.querySelectorAll(".co2").forEach(element => {
         const location = element.innerHTML.split(/\s+/);
-        console.log(`x is ${location[0]}, y is ${location[1]}`);
-        newCO2 = makeCO2(Number(location[0]), Number(location[1]), element);
+        location[0] = eval(location[0]);
+        console.log(`x is ${location[0]}, y is ${location[1]}, box is ${location[2]}`);
+        newCO2 = makeCO2(Number(location[0]), Number(location[1]), Number(location[2]), element);
         newCO2.forEach( tempelement => {
             element.insertAdjacentElement('afterend', tempelement);
             //console.log(`Added ${tempelement}`);
@@ -614,39 +612,43 @@ function addAll() {
     });
     document.querySelectorAll(".h2o").forEach(element => {
         const location = element.innerHTML.split(/\s+/);
-        console.log(`x is ${location[0]}, y is ${location[1]}`);
-        newH2O = makeH2O(Number(location[0]), Number(location[1]), element);
+        location[0] = eval(location[0]);
+        console.log(`x is ${location[0]}, y is ${location[1]}, box is ${location[2]}`);
+        newH2O = makeH2O(Number(location[0]), Number(location[1]), Number(location[2]), element);
         newH2O.forEach(tempelement => {
             element.insertAdjacentElement('afterend', tempelement);
         });
     });
     document.querySelectorAll(".h2co3").forEach(element => {
         const location = element.innerHTML.split(/\s+/);
-        console.log(`x is ${location[0]}, y is ${location[1]}`);
-        newH2CO3 = makeH2CO3(Number(location[0]), Number(location[1]), element);
+        location[0] = eval(location[0]);
+        console.log(`x is ${location[0]}, y is ${location[1]}, box is ${location[2]}`);
+        newH2CO3 = makeH2CO3(Number(location[0]), Number(location[1]), Number(location[2]), element);
         newH2CO3.forEach(tempelement => {
             element.insertAdjacentElement('afterend', tempelement);
         });
     });
     document.querySelectorAll(".h3o").forEach(element => {
         const location = element.innerHTML.split(/\s+/);
-        console.log(`x is ${location[0]}, y is ${location[1]}`);
-        newH3O = makeH3O(Number(location[0]), Number(location[1]), element);
+        location[0] = eval(location[0]);
+        console.log(`x is ${location[0]}, y is ${location[1]}, box is ${location[2]}`);
+        newH3O = makeH3O(Number(location[0]), Number(location[1]), Number(location[2]), element);
         newH3O.forEach(tempelement => {
             element.insertAdjacentElement('afterend', tempelement);
         });
     })
     document.querySelectorAll(".hco3").forEach(element => {
         const location = element.innerHTML.split(/\s+/);
-        console.log(`x is ${location[0]}, y is ${location[1]}`);
-        newHCO3 = makeHCO3(Number(location[0]), Number(location[1]), element);
+        location[0] = eval(location[0]);
+        console.log(`x is ${location[0]}, y is ${location[1]}, box is ${location[2]}`);
+        newHCO3 = makeHCO3(Number(location[0]), Number(location[1]), Number(location[2]),element);
         newHCO3.forEach(tempelement => {
             element.insertAdjacentElement('afterend', tempelement);
         });
     })
 }
 
-function makeH3O (x, y, element) {
+function makeH3O (x, y, box, element) {
     const h1 = document.createElement("div");
     const h2 = document.createElement("div");
     const h3 = document.createElement("div");
@@ -659,14 +661,14 @@ function makeH3O (x, y, element) {
     h2.classList.add("hydrogen", "circle", "js");
     h3.classList.add("hydrogen", "circle", "js");
     o.classList.add("oxygen", "circle", "js");
-    let molecule = new H3O(x, y, h1, o, h2, h3, element);
+    let molecule = new H3O(x, y, box, h1, o, h2, h3, element);
     molecule.draw();
     molecule.makeDraggable([h1, o, h2, h3]);
     h3os.push(molecule);
     return [h1, o, h2, h3];
 }
 
-function makeH2O(x, y, element) {
+function makeH2O(x, y, box, element) {
     const h1 = document.createElement("div");
     const h2 = document.createElement("div");
     const o = document.createElement("div");
@@ -679,14 +681,14 @@ function makeH2O(x, y, element) {
     h1.style=`top:${y+25}px; left:${x-20}px;`;
     h2.style=`top:${y+25}px; left:${x+25}px;`;
     o.style=`top:${y}px; left:${x}px;`;
-    let molecule = new H2O(x, y, h1, o, h2, element);
+    let molecule = new H2O(x, y, box, h1, o, h2, element);
     molecule.draw();
     molecule.makeDraggable([h1, o, h2]);
     h2os.push(molecule);
     return [h1, o, h2];
 }
 
-function makeCO2(x,y, element) {
+function makeCO2(x,y, box, element) {
     const o1 = document.createElement("div");
     const o2 = document.createElement("div");
     const c = document.createElement("div");
@@ -696,14 +698,14 @@ function makeCO2(x,y, element) {
     o1.classList.add("oxygen", "circle", "js");
     o2.classList.add("oxygen", "circle", "js");
     c.classList.add("carbon", "circle", "js");
-    let molecule = new CO2(x, y, o1, c, o2, element);
+    let molecule = new CO2(x, y, box, o1, c, o2, element);
     molecule.draw();
     molecule.makeDraggable([o1, c, o2]);
     co2s.push(molecule);
     return [o1, c, o2];
 }
 
-function makeH2CO3(x, y, element) {
+function makeH2CO3(x, y, box, element) {
     const o1 = document.createElement("div");
     const o2 = document.createElement("div");
     const c = document.createElement("div");
@@ -722,14 +724,14 @@ function makeH2CO3(x, y, element) {
     o3.classList.add("oxygen", "circle", "js");
     h1.classList.add("hydrogen", "circle", "js");
     h2.classList.add("hydrogen", "circle", "js");
-    let molecule = new H2CO3(x, y, h1, o1, c, o2, o3, h2, element);
+    let molecule = new H2CO3(x, y, box, h1, o1, c, o2, o3, h2, element);
     molecule.draw();
     molecule.makeDraggable([h1, o1, c, o2, o3, h2]);
     h2co3s.push(molecule);
     return [h1, o1, c, o2, o3, h2];
 }
 
-function makeHCO3(x, y, element) {
+function makeHCO3(x, y, box, element) {
     const o1 = document.createElement("div");
     const o2 = document.createElement("div");
     const c = document.createElement("div");
@@ -745,7 +747,7 @@ function makeHCO3(x, y, element) {
     c.classList.add("carbon", "circle", "js");
     o3.classList.add("oxygen", "circle", "js");
     h1.classList.add("hydrogen", "circle", "js");
-    let molecule = new HCO3(x, y, h1, o1, c, o2, o3, element);
+    let molecule = new HCO3(x, y, box, h1, o1, c, o2, o3, element);
     molecule.draw();
     molecule.makeDraggable([h1, o1, c, o2, o3]);
     hco3s.push(molecule);

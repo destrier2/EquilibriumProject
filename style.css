@@ -164,6 +164,10 @@ a {
     vertical-align: sub;
     font-size:small;
 }
+.superscript {
+    vertical-align: super;
+    font-size:small;
+}
 
 .floatLeft {
     width:fit-content;
@@ -196,7 +200,7 @@ a {
 }
 
 .zoomScrollImg {
-    max-width:50%;
+    max-width:50vw;
     opacity:0;
     margin:0;
     padding:0;
@@ -263,4 +267,11 @@ a {
     width:40px;
     height:40px;
     position:absolute;
+}
+
+.reactionDiv {
+    width:80vw;
+    min-height:200px;
+    /*height:20vh;*/
+    position:relative;
 }
