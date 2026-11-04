@@ -22,6 +22,16 @@ html {
     position:relative;
 }
 
+.js:hover{
+    cursor:pointer;
+}
+
+button {
+    padding:10px;
+    border-radius:10px;
+    background-color:#f7cac9;
+}
+
 .titleShrink {
     position:absolute;
     top: 30%;
@@ -128,12 +138,11 @@ html {
 .title {
     margin-left: 10vw;
     font-family:Verdana, Geneva, Tahoma, sans-serif;
-
-    .right {
-        margin:auto;
+}
+.right {
+        margin-right:10vw;
         text-align:right;
     }
-}
 
 .textBox {
     width: fit-content;
@@ -141,6 +150,14 @@ html {
     max-width:40vw;
     color: white;
     display:inline-block;
+}
+.textBoxRight {
+    text-align:right;
+    width:fit-content;
+    max-width:40vw;
+    color:white;
+    margin-right: 10vw;
+    float:right;
 }
 
 .subscript {
