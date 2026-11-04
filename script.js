@@ -123,7 +123,7 @@ class OH extends Molecule {
                 h2os.push(molecule);
                 let moleculeTwo = new H2O(this.x, this.y, combineWith.h1, combineWith.o, combineWith.h2);
                 moleculeTwo.draw();
-                molecule.makeDraggable([combineWith.h1, combineWith.o, combineWith.h2]);
+                moleculeTwo.makeDraggable([combineWith.h1, combineWith.o, combineWith.h2]);
                 h2os.push(moleculeTwo);
             }
             
@@ -146,8 +146,8 @@ class H3O extends Molecule{
         this.o=o;
     }
     draw() {
-        this.h1.style=`top:${this.y+25}px; left:${this.x-25}px;`;
-        this.h2.style=`top:${this.y+25}px; left:${this.x+30}px;`;
+        this.h1.style=`top:${this.y+25}px; left:${this.x-25}px; z-index:1;`;
+        this.h2.style=`top:${this.y+25}px; left:${this.x+30}px; z-index:-1`;
         this.h3.style=`top:${this.y-20}px; left:${this.x+5}px; z-index:-1;`
         this.o.style=`top:${this.y}px; left:${this.x}px;`;
     }
@@ -410,7 +410,7 @@ class H2O extends Molecule{
                 let molecule = new H2CO3(this.x, this.y, this.h1, combineWith.o1, combineWith.c, combineWith.o2, combineWith.o3, this.h2, null);
                 molecule.draw();
                 molecule.makeDraggable([this.h1, combineWith.o1, combineWith.c, combineWith.o2, combineWith.o3, this.h2]);
-                hco3s.push(molecule);
+                h2co3s.push(molecule);
                 animationId = requestAnimationFrame(()=> molecule.draw());
                 animationId = requestAnimationFrame(() => moveMolecule(moleculeTwo,0));
 
@@ -435,7 +435,7 @@ class H2O extends Molecule{
 
     draw() {
         this.h1.style=`top:${this.y+25}px; left:${this.x-20}px;`;
-        this.h2.style=`top:${this.y+25}px; left:${this.x+25}px;`;
+        this.h2.style=`top:${this.y+25}px; left:${this.x+25}px; z-index:-1;`;
         this.o.style=`top:${this.y}px; left:${this.x}px;`;
     }
 }
@@ -524,7 +524,7 @@ function myFunction() {
         let minDist = minDistForReaction;
         let index = -1; //Negative for none close enough
         for (let i = 0; i < h2os.length; i++) {
-            if (!hco3Used.includes(i) && !h2oUsed.includes(counter)) {
+            if (!hco3Used.includes(counter) && !h2oUsed.includes(i)) {
                 let h2oPos = h2os[i].getLocation();
                 let dist = getDistance(pos, h2oPos);
                 if (minDist > dist) {
