@@ -76,8 +76,10 @@ class Molecule {
     mouseMove(event) {
         if (this.dragging) {
             this.x = event.clientX - this.offsetX;
+            //this.x = Math.min(this.x, width);
             this.y = event.clientY - this.offsetY;
-
+            this.y = Math.min(this.y, this.height);
+            this.y = Math.max(0, this.y);
             this.draw();
         }
     }
@@ -111,8 +113,8 @@ class OH extends Molecule {
     }
 
     draw() {
-        this.h.style=`top:${this.y+25}px; left:${this.x-20}px;`;
-        this.o.style=`top:${this.y}px; left:${this.x}px;`;
+        this.h.style=`top:${this.y+25}px; left:${this.x-20}px; z-index:5;`;
+        this.o.style=`top:${this.y}px; left:${this.x}px; z-index:4;`;
     }
 
     combineH3O(combineWith) {
@@ -220,10 +222,10 @@ class H3O extends Molecule{
         this.speed=3;
     }
     draw() {
-        this.h1.style=`top:${this.y+25}px; left:${this.x-25}px; z-index:1;`;
-        this.h2.style=`top:${this.y+25}px; left:${this.x+30}px; z-index:-1`;
-        this.h3.style=`top:${this.y-20}px; left:${this.x+5}px; z-index:-1;`
-        this.o.style=`top:${this.y}px; left:${this.x}px;`;
+        this.h1.style=`top:${this.y+25}px; left:${this.x-25}px; z-index:5;`;
+        this.h2.style=`top:${this.y+25}px; left:${this.x+30}px; z-index:3`;
+        this.h3.style=`top:${this.y-20}px; left:${this.x+5}px; z-index:3;`
+        this.o.style=`top:${this.y}px; left:${this.x}px; z-index:4;`;
     }
 
     combineHCO3(combineWith) { //combineWith is the hco3 element that it's supposed to combine with
@@ -290,11 +292,11 @@ class HCO3 extends Molecule{
     }
 
     draw() {
-        this.o1.style=`top:${this.y+30}px; left:${this.x-25}px;`;
-        this.o2.style=`top:${this.y+30}px; left:${this.x+45}px;`;
-        this.c.style=`top:${this.y}px; left:${this.x}px;`;
-        this.o3.style=`top:${this.y-35}px; left:${this.x+10}px; z-index:-1;`
-        this.h1.style=`top:${this.y+10}px; left:${this.x-45}px;`
+        this.o1.style=`top:${this.y+30}px; left:${this.x-25}px; z-index:5;`;
+        this.o2.style=`top:${this.y+30}px; left:${this.x+45}px; z-index:3;`;
+        this.c.style=`top:${this.y}px; left:${this.x}px; z-index:4;`;
+        this.o3.style=`top:${this.y-35}px; left:${this.x+10}px; z-index:3;`
+        this.h1.style=`top:${this.y+10}px; left:${this.x-45}px; z-index:6;`
     }
 }
 
@@ -305,13 +307,13 @@ class CO2 extends Molecule{
         this.c = c;
         this.o2 = o2;
         this.html = html;
-        this.speed = 4; //Still pretty fast
+        this.speed = 3; //Still pretty fast
     }
 
     draw() {
-        this.o1.style=`top:${this.y+30}px; left:${this.x-25}px;`;
-        this.o2.style=`top:${this.y+30}px; left:${this.x+45}px;`;
-        this.c.style=`top:${this.y}px; left:${this.x}px;`;
+        this.o1.style=`top:${this.y+30}px; left:${this.x-25}px; z-index:5;`;
+        this.o2.style=`top:${this.y+30}px; left:${this.x+45}px; z-index:3;`;
+        this.c.style=`top:${this.y}px; left:${this.x}px; z-index:4;`;
     }
 }
 
@@ -329,12 +331,12 @@ class H2CO3 extends Molecule{
     }
 
     draw() {
-        this.o1.style=`top:${this.y+30}px; left:${this.x-25}px;`;
-        this.o2.style=`top:${this.y+30}px; left:${this.x+45}px;`;
-        this.c.style=`top:${this.y}px; left:${this.x}px;`;
-        this.o3.style=`top:${this.y-35}px; left:${this.x+10}px; z-index:-1;`
-        this.h1.style=`top:${this.y+10}px; left:${this.x-45}px;`
-        this.h2.style=`top:${this.y+10}px; left:${this.x+75}px; z-index:-1;`
+        this.o1.style=`top:${this.y+30}px; left:${this.x-25}px; z-index:5;`;
+        this.o2.style=`top:${this.y+30}px; left:${this.x+45}px; z-index:3`;
+        this.c.style=`top:${this.y}px; left:${this.x}px; z-index:4;`;
+        this.o3.style=`top:${this.y-35}px; left:${this.x+10}px; z-index:3;`
+        this.h1.style=`top:${this.y+10}px; left:${this.x-45}px; z-index:6;`
+        this.h2.style=`top:${this.y+10}px; left:${this.x+75}px; z-index:2;`
     }
 
     decompose() {
@@ -518,9 +520,9 @@ class H2O extends Molecule{
     }
 
     draw() {
-        this.h1.style=`top:${this.y+25}px; left:${this.x-20}px;`;
-        this.h2.style=`top:${this.y+25}px; left:${this.x+25}px; z-index:-1;`;
-        this.o.style=`top:${this.y}px; left:${this.x}px;`;
+        this.h1.style=`top:${this.y+25}px; left:${this.x-20}px; z-index:5`;
+        this.h2.style=`top:${this.y+25}px; left:${this.x+25}px; z-index:3;`;
+        this.o.style=`top:${this.y}px; left:${this.x}px; z-index:4;`;
     }
 }
 

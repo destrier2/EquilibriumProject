@@ -52,20 +52,26 @@
         <div class=section>
             <div class="textBoxRight">
                 <p>A buffer is an aqueous solution that resists change in pH when adding acid/base in small amounts. Buffers usually consist of a weak acid and its conjugate base, or a weak base and its conjugate acid. 
-                    <br><br>In the human body, buffer systems often help prevent suddent changes in blood pH, allowing various biological processes to continue under stable conditions.</p>
-            </div>|
+                    <br><br>In the human body, buffer systems often help prevent suddent changes in blood pH, allowing various biological processes to continue under stable conditions.
+                    <img src="./images/BufferExample.png" class="zoomScrollImg" style="max-height:30vh; display:block;">
+                </p>
+            </div>
         </div>
 
         <br id="Two"><br><br>
         <p class="sectionHead">02 The Science Behind pH Regulation</p>
         <h1 class="title">CARBONIC ACID-BICARBONATE BUFFER SYSTEM</h1>
         <div class="textBox">
-            <p>The primary blood buffer system consists of carbonic acid (H2CO3) and bicarboniate ions (HCO3-). These compounds allow reversible reactions that regulate and keep a stable blood pH.
-                <br><br>The human body carries more than 15 moles of carbon dioxide (CO2) from its tissues to lungs each day. Some of this carbon dioxide dissolves in the water in the blood to form carbonic acid (H2CO3), making the blood more acidic.
-                <br><br>This then will cause a shift left in reaction 1 and right in reaction 2 (see <a href="#reactions">below</a> for the equations), creating more base and thus neutralizing the extra acid. 
+            <p>The primary blood buffer system consists of carbonic acid (H<span class="subscript">2</span>CO<span class="subscript">3</span>) and bicarboniate ions (HCO<span class="subscript">3</span><span class="superscript">-</span>). 
+                <br><br>These substances participate in reversible reactions, allowing the system to regulate any changes in acidity and keep a stable blood pH.
+                <br><br>The human body carries more than 15 moles of carbon dioxide (CO<span class="subscript">2</span>) from its tissues to its lungs each day. This carbon dioxide can dissolve in the water in blood, where it reacts to form carbonic acid (H<span class="subscript">2</span>CO<span class="subscript">3</span>).
+                <br><br>Carbonic acid will react with water to form hydronium ions, so an increase in the amount of dissolved CO<span class="subscript">2</span> will make the blood more acidic. 
             </p>
+            
         </div>
+        <img src="./images/Diagram.png" class="zoomScrollImg" style="max-width:40vw; max-height:25vh;">
 
+        <br>
         <h1 class="title" style="text-align:center; margin-left:auto;" id="reactions">The Chemical Reactions</h1>
         <div class="textBox" style="width:80vw; max-width:80vw; text-align:center;">
             <p>
@@ -97,7 +103,23 @@
 
             </p>
         </div>
-        <br><br><br>
+        <br>
+        <h1 class="title">HOW DOES THE BUFFER REGULATE CHANGES IN pH?</h1>
+        <div class="textBox">
+            <p>The carbonic acid and it's conjugate base help regulate blood pH by reacting with any added acid/base.
+            </p>
+            <h2>WHAT HAPPENS WHEN ACID IS ADDED?</h2>
+            <p>When acid is added and enters the bloodstream, the concentration of hydronium ion (H<span class="subscript">3</span>O<span class="superscript">+</span>) increases, which makes pH decrease. There’s an excess of hydronium ions, so bicarbonate ions will react with some of these excess ions to form carbonic acid and water. This is the reverse of the 2nd reaction, which can be observed above.
+                <br><br>As a result of consuming this excess hydronium, the buffer reduces the decrease in pH.
+            </p>
+            <h2>WHAT HAPPENS WHEN BASE IS ADDED?</h2>
+            <p>
+                Likewise, when a base enters the blood, hydroxide ions are in excess, causing pH to increase. Carbonic acid will then react with these excess ions to form bicarbonate ions and water. This is the reverse of the 3rd reaction.
+                <br><br>By consuming some of the added hydroxide ions, the buffer reduces the increase in pH.
+            </p>
+            </div>
+        
+        <br><br>
 
         <!--
         COPY THIS for subscripts: <span class="subscript">2</span>
@@ -106,7 +128,13 @@
 
         <h2 class="sectionHead" id="Three">Section Three</h2>
 
-        <div class="moleculeDiv" id = "10" style="width:80vw; height:80vh; border: 5px solid white; position:relative;overflow:clip;"> <!-- Molecules! -->
+        <button id="test">Test</button>
+        <button id="Cancel">Cancel</button>
+        <button id="Debug">Debug</button>
+
+        <img src="./images/BloodVesselWalls.png" style="transform:rotate(180deg); min-width:100vw;">
+        <span style="display:block;background-color:#f1c9c9; height:65vh; width:120vw; margin:-90px; margin-bottom:-65vh; z-index:-2;"></span>
+        <div class="moleculeDiv" id = "10" style="margin-bottom:-20px; margin-top:10px; width:100vw; height:calc(55vh); position:relative;"> <!-- Molecules! -->
             <span class="co2 hidden">100 100 10 true</span>
             <span class="h2o hidden">199 100 10 true</span>
             <span class="h2o hidden">410 100 10 true</span>
@@ -114,13 +142,6 @@
             <span class="h3o hidden">210 250 10 true</span>
             <span class="hco3 hidden">300 250 10 true</span>
         </div>
-
-        <button id="test">Test</button>
-        <button id="Cancel">Cancel</button>
-        <button id="Debug">Debug</button>
-
-        <img src="./images/BloodVesselWalls.png" style="transform:rotate(180deg); min-width:100vw;">
-        <span style="display:block;background-color:#f1c9c9; height:50vh; width:120vw; margin:-80px;"></span>
         <img src="./images/BloodVesselWalls.png" style="min-width:100vw;">
 
         <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
