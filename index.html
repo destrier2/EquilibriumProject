@@ -67,31 +67,31 @@
         </div>
 
         <h1 class="title" style="text-align:center; margin-left:auto;" id="reactions">The Chemical Reactions</h1>
-        <div class="textBox" style="width:80vw; max-width:80vw; text-align:center; border:1px solid white;">
+        <div class="textBox" style="width:80vw; max-width:80vw; text-align:center;">
             <p>
                 The blood buffer is made up of several chemical reactions: 
                 <br><br>
-                <button onclick="myFunction()">React</button>
+                <button onclick="myFunctionNotMoving()">React</button>
                 <button style="margin-left:20px;" onclick="clearAll(); addAll();">Reset</button>
                 <br><br>
                 CO<span class="subscript">2(aq)</span> + H<span class="subscript">2</span>O<span class="subscript">(l)</span> ↔ H<span class="subscript">2</span>CO<span class="subscript">3(aq)</span>
                 <br>
-                <div class="reactionDiv">
-                    <span class="co2 hidden">window.innerWidth/3.0 20 1</span>
-                    <span class="h2o hidden">window.innerWidth/3.0+199 20 1</span>
+                <div class="reactionDiv" id="1">
+                    <span class="co2 hidden">window.innerWidth/3.0 20 1 false</span>
+                    <span class="h2o hidden">window.innerWidth/3.0+199 20 1 false</span>
                 </div>
                 H<span class="subscript">2</span>CO<span class="subscript">3</span> + H<span class="subscript">2</span>O ↔ H<span class="subscript">3</span>O<span class="superscript">+</span> + HCO<span class="subscript">3</span><span class="superscript">-</span>
                 <br>
-                <div class="reactionDiv">
-                    <span class="h2co3 hidden">window.innerWidth/3.0+50 50 2</span>
-                    <span class="h2o hidden">window.innerWidth/3.0+199 30 2</span>
+                <div class="reactionDiv" id="2">
+                    <span class="h2co3 hidden">window.innerWidth/3.0+50 50 2 false</span>
+                    <span class="h2o hidden">window.innerWidth/3.0+199 30 2 false</span>
                 </div>
                 <br>
-                HCO<span class="subscript">3</span><span class="superscript">-</span> + H<span class="subscript">2</span>O ↔ H<span class="subscript">2</span>CO<span class="subscript">3</span> + OH<span class="superscript">-</span>
+                HCO<span class="subscript" id="3">3</span><span class="superscript">-</span> + H<span class="subscript">2</span>O ↔ H<span class="subscript">2</span>CO<span class="subscript">3</span> + OH<span class="superscript">-</span>
                 <br>
                 <div class="reactionDiv">
-                    <span class="hco3 hidden">window.innerWidth/3.0+40 50 3</span>
-                    <span class="h2o hidden">window.innerWidth/3.0+160 30 3</span>
+                    <span class="hco3 hidden">window.innerWidth/3.0+40 50 3 false</span>
+                    <span class="h2o hidden">window.innerWidth/3.0+160 30 3 false</span>
                 </div>
                 <br>
 
@@ -106,13 +106,13 @@
 
         <h2 class="sectionHead" id="Three">Section Three</h2>
 
-        <div class="moleculeDiv" style="width:80vw; height:80vh; border: 5px solid white; position:relative;overflow:clip;"> <!-- Molecules! -->
-            <span class="co2 hidden">100 100 10</span>
-            <span class="h2o hidden">199 100 10</span>
-            <span class="h2o hidden">410 100 10</span>
-            <span class="h2co3 hidden">500 100 10</span>
-            <span class="h3o hidden">210 250 10</span>
-            <span class="hco3 hidden">300 250 10</span>
+        <div class="moleculeDiv" id = "10" style="width:80vw; height:80vh; border: 5px solid white; position:relative;overflow:clip;"> <!-- Molecules! -->
+            <span class="co2 hidden">100 100 10 true</span>
+            <span class="h2o hidden">199 100 10 true</span>
+            <span class="h2o hidden">410 100 10 true</span>
+            <span class="h2co3 hidden">500 100 10 true</span>
+            <span class="h3o hidden">210 250 10 true</span>
+            <span class="hco3 hidden">300 250 10 true</span>
         </div>
 
         <button id="test">Test</button>
