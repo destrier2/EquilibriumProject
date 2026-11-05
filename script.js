@@ -528,6 +528,37 @@ class H2O extends Molecule{
 
 document.getElementById("test").addEventListener("click", myFunction);
 
+function addRandomMolecule() { //Adds it to box 10
+    const num = getRandom(1,6);
+    if (num == 1) { //H2O
+        makeH2O(getRandom(1, 500), getRandom(1, 500), 10, true, getD(4), getD(4), null);
+        console.log("Making a new H2O");
+    } else if (num == 2) { //co2
+        makeCO2(getRandom(1, 500), getRandom(1, 500), 10, true, getD(3), getD(3), null);
+        console.log("Making a new CO2");
+    } else if (num == 3) { //h2co3
+        makeH2CO3(getRandom(1, 500), getRandom(1, 500), 10, true, getD(2), getD(2), null);
+        console.log("Making a new H2CO3");
+    } else if (num == 4) { //h3o
+        makeH3O(getRandom(1, 500), getRandom(1, 500), 10, true, getD(4), getD(4), null);
+        console.log("Making a new H3O");
+    } else if (num == 5) { //hco3
+        makeHCO3(getRandom(1, 500), getRandom(1, 500), 10, true, getD(3), getD(3), null);
+        console.log("Making a new HCO3");
+    } else if (num == 6) { //oh
+        makeH2O(getRandom(1, 500), getRandom(1, 500), 10, true, getD(5), getD(5), null);
+        console.log("Making a new OH");
+    }
+    /*
+let h2os = [];
+let co2s = [];
+let h2co3s = [];
+let h3os = [];
+let hco3s = [];
+let ohs = [];* */
+//x, y, box, moving, dx, dy, element
+}
+
 function clearAll() {
     h2os = [];
     co2s = [];
