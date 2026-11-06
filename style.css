@@ -199,6 +199,23 @@ a {
     }
 }
 
+.zoomScrollImg:hover {
+    animation: mousezoom 1s;
+    transform:scale(1.5);
+    opacity:1;
+}
+
+@keyframes mousezoom {
+    0% {
+        transform:scale(1);
+        opacity:1;
+    }
+    100% {
+        opacity:1;
+        transform: scale(1.5);
+    }
+}
+
 .zoomScrollImg {
     max-width:50vw;
     opacity:0;
