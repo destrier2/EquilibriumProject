@@ -18,9 +18,9 @@
             
         </div>
         <div class="navbar">
-            <table class="navTable">
+            <img src="./images/RBCs.png" style="max-height:2lh; margin-bottom:-10px;display:inline-block;margin-left:20px;"><p id="title" style="display:inline-block; margin-left:20px;margin-right:20px;">Blood pH</p>
+            <table class="navTable" style="margin-right:20px;">
                 <tr>
-                    <td class="title">Blood pH <img src="./images/RBCs.png" style="max-height:2lh; margin-bottom:-10px;"></td>
                     <td><a href="#title">Top</a></td>
                     <td><a href="#One">Introduction</a></td>
                     <td><a href="#Two">Buffers</a></td>
@@ -41,9 +41,9 @@
         <div class="section">
             <div class="textBox">
                 <p>Blood pH is the measurement of how acidic or basic your blood is. 
-                    <br><br>The pH scale measures the acidity of a solution from on the concentration of hydronium ions (H3O+) in a solution. It can be calculated using the formulas:
-                    <br><br>pH = -log[H3O+]
-                    <br><br>pH = 14 + log [OH-]
+                    <br><br>The pH scale measures the acidity of a solution from on the concentration of hydronium ions (H<span class="subscript">3</span>O<span class="superscript">+</span>) in a solution. It can be calculated using the formulas:
+                    <br><br>pH = -log([H<span class="subscript">3</span>O<span class="superscript">+</span>])
+                    <br><br>pH = 14 + log([OH<span class="superscript">-</span>])
                     <br><br>Your body’s blood is naturally slightly basic, with a normal pH between 7.35-7.45. It’s very important that the pH is maintained within this range because many of your body’s biological reactions and enzymes depend on specific pH conditions to function.
                     <br><br>Even small changes in your blood pH can create health risks. If your blood reaches pH values of below 6.8 or above 7.8, it could potentially be fatal.
             </p>
@@ -95,14 +95,14 @@
                     <span class="co2 hidden">window.innerWidth/3.0 20 1 false</span>
                     <span class="h2o hidden">window.innerWidth/3.0+199 20 1 false</span>
                 </div>
-                H<span class="subscript">2</span>CO<span class="subscript">3</span> + H<span class="subscript">2</span>O ↔ H<span class="subscript">3</span>O<span class="superscript">+</span> + HCO<span class="subscript">3</span><span class="superscript">-</span>
+                H<span class="subscript">2</span>CO<span class="subscript">3(aq)</span> + H<span class="subscript">2</span>O<span class="subscript">(l)</span> ↔ H<span class="subscript">3</span>O<span class="superscript">+</span><span class="subscript">(aq)</span> + HCO<span class="superscript">-</span><span class="subscript">(aq)</span>
                 <br>
                 <div class="reactionDiv" id="2">
                     <span class="h2co3 hidden">window.innerWidth/3.0+50 50 2 false</span>
                     <span class="h2o hidden">window.innerWidth/3.0+199 30 2 false</span>
                 </div>
                 <br>
-                HCO<span class="subscript" id="3">3</span><span class="superscript">-</span> + H<span class="subscript">2</span>O ↔ H<span class="subscript">2</span>CO<span class="subscript">3</span> + OH<span class="superscript">-</span>
+                HCO<span class="subscript" id="3">3</span><span class="superscript">-</span><span class="subscript">(aq)</span> + H<span class="subscript">2</span>O<span class="subscript">(l)</span> ↔ H<span class="subscript">2</span>CO<span class="subscript">3</span><span class="subscript">(aq)</span> + OH<span class="superscript">-</span><span class="subscript">(aq)</span>
                 <br>
                 <div class="reactionDiv">
                     <span class="hco3 hidden">window.innerWidth/3.0+40 50 3 false</span>
@@ -121,12 +121,12 @@
                 </p>
                 <h2>WHAT HAPPENS WHEN ACID IS ADDED?</h2>
                 <p>
-                    When acid is added and enters the bloodstream, the concentration of hydronium ion (H<span class="subscript">3</span>O<span class="superscript">+</span>) increases, which makes pH decrease. This leads to an excess of hydronium ions, so bicarbonate ions will react with some of these excess ions to form carbonic acid and water. This is the reverse of the 2nd reaction, which can be observed above.
+                    When acid is added and enters the bloodstream, the concentration of hydronium ion (H<span class="subscript">3</span>O<span class="superscript">+</span>) increases, which makes pH decrease. This leads to an excess of hydronium ions, so bicarbonate ions will react with some of these excess ions to form carbonic acid and water. This is the reverse of the 2<span class="superscript">nd</span> reaction, which can be observed above.
                     <br><br>As a result of consuming this excess hydronium, the buffer reduces the amount by which the pH decreases.
                 </p>
                 <h2>WHAT HAPPENS WHEN BASE IS ADDED?</h2>
                 <p>
-                    Likewise, when a base enters the blood, hydroxide ions increase, causing pH to increase. Carbonic acid will then react with these excess ions to form bicarbonate ions and water. This is the reverse of the 3rd reaction.
+                    Likewise, when a base enters the blood, hydroxide ions increase, causing pH to increase. Carbonic acid will then react with these excess ions to form bicarbonate ions and water. This is the reverse of the 3<span class="superscript">rd</span> reaction.
 
                     <br><br>By consuming some of the added hydroxide ions, the buffer reduces the amount by which the pH increases.
                 </p>
@@ -161,7 +161,7 @@
         <div class="textBoxRight">
             <p>
                 All three equations are in equilibrium at once, each impacting the others with their shifts. 
-                <br><br>Let’s say there’s an increase in the concentration of CO2, which thus causes equation 1 to shift right. This increases the concentration of H2CO3, which makes the bloodstream more acidic as it causes equation two to shift right, thus producing more hydronium ions. However, this also produces more bicarbonate ions, which then react with water to increase the concentration of carbonic acid, causing equation 1 to shift left, especially since carbonic acid is unstable in water. 
+                <br><br>Let’s say there’s an increase in the concentration of CO<span class="subscript">2</span>, which thus causes equation 1 to shift right. This increases the concentration of H<span class="subscript">2</span>CO<span class="subscript">3</span>, which makes the bloodstream more acidic as it causes equation two to shift right, thus producing more hydronium ions. However, this also produces more bicarbonate ions, which then react with water to increase the concentration of carbonic acid, causing equation 1 to shift left, especially since carbonic acid is unstable in water. 
                 <br><br>Note that in the Bjerrum plot, the concentrations don’t quite reach zero, they simply dip down to very, very small concentrations. The plot itself is a representation of equilibrium concentrations as a function of pH. The pH of blood is around 7.35-7.45, which is represented with the green segment. 
                 <br><br>It is also worth noting that carbonic acid is a diprotic acid, but since the concentration of carbonate ions is extremely small in the relevant range, it can essentially be treated like a monoprotic acid when it comes to blood. 
             </p>
@@ -200,7 +200,7 @@
                 <br><br>Alkalosis can cause dizziness, confusion, nausea, muscle spasms, seizures, and more.
             </p>
         </div>
-        <div style="height:200px;width:100vw;"></div> <!--Spacer-->
+        <div style="height:300px;width:100vw;"></div> <!--Spacer-->
 
         <h1 class="title">REAL LIFE APPLICATIONS</h1>
         <div class="textBox">
@@ -209,8 +209,9 @@
                 <br><br>Hyperventilation occurs when you breathe rapidly, causing an excess of carbon dioxide to be lost. This loss causes the system to shift left, reducing hydrogen ion concentration and increasing blood pH. This can then lead to respiratory alkalosis.
             </p>
         </div>
+        <img src="./images/Lungs.png" class="zoomScrollImg" style="max-width:40%;max-height:15lh;margin-left:5vw;">
 
-        <div style="height:200px;width:100vw;"></div> <!--Spacer-->
+        <div style="height:100px;width:100vw;"></div> <!--Spacer-->
         <br id="Five"><br><br>
         <p class="sectionHead" style="margin:auto; text-align:center;">05 Conclusion</p>
         <h1 class="title" style="text-align:center;margin-left:0;">Conclusion</h1>

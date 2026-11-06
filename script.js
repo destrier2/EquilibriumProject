@@ -533,22 +533,22 @@ function addRandomMolecule() { //Adds it to box 10
     let parts;
     const num = getRandom(1,6);
     if (num == 1) { //H2O
-        parts = makeH2O(getRandom(1, 500), getRandom(1, 500), 10, true, getD(4), getD(4), null);
+        parts = makeH2O(getRandom(1, 200), getRandom(1, 200), 10, true, getD(4), getD(4), null);
         console.log("Making a new H2O");
     } else if (num == 2) { //co2
-        parts = makeCO2(getRandom(1, 500), getRandom(1, 500), 10, true, getD(3), getD(3), null);
+        parts = makeCO2(getRandom(1, 200), getRandom(1, 200), 10, true, getD(3), getD(3), null);
         console.log("Making a new CO2");
     } else if (num == 3) { //h2co3
-        parts = makeH2CO3(getRandom(1, 500), getRandom(1, 500), 10, true, getD(2), getD(2), null);
+        parts = makeH2CO3(getRandom(1, 200), getRandom(1, 200), 10, true, getD(2), getD(2), null);
         console.log("Making a new H2CO3");
     } else if (num == 4) { //h3o
-        parts = makeH3O(getRandom(1, 500), getRandom(1, 500), 10, true, getD(4), getD(4), null);
+        parts = makeH3O(getRandom(1, 200), getRandom(1, 200), 10, true, getD(4), getD(4), null);
         console.log("Making a new H3O");
     } else if (num == 5) { //hco3
-        parts = makeHCO3(getRandom(1, 500), getRandom(1, 500), 10, true, getD(3), getD(3), null);
+        parts = makeHCO3(getRandom(1, 200), getRandom(1, 200), 10, true, getD(3), getD(3), null);
         console.log("Making a new HCO3");
     } else if (num == 6) { //oh
-        parts = makeH2O(getRandom(1, 500), getRandom(1, 500), 10, true, getD(5), getD(5), null);
+        parts = makeH2O(getRandom(1, 200), getRandom(1, 200), 10, true, getD(5), getD(5), null);
         console.log("Making a new OH");
     }
     parts.forEach(tempelement => {

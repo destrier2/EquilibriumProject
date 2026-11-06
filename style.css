@@ -109,12 +109,12 @@ button {
 }
 
 .navTable {
-    display:inline-block;
     padding: 10px;
-    width: 100vw;
+    width: fit-content;
+    float:right;
 
     .title {
-        width: 50%;
+        width: 35%;
     }
     td {
         padding-left:2vw;
@@ -123,6 +123,8 @@ button {
 
 a {
     color:white;
+    text-decoration:none;
+
 }
 
 
