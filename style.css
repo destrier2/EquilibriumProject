@@ -230,7 +230,7 @@ a {
 
 .section {
     width: 100vw;
-    height:60vh;
+    /*height:60vh;*/
     /*border:10px solid white;*/
 }
 

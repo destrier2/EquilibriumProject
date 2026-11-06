@@ -44,38 +44,42 @@
                     <br><br>Even small changes in your blood pH can create health risks. If your blood reaches pH values of below 6.8 or above 7.8, it could potentially be fatal.
             </p>
             </div>
-            <div class="floatRight"><img src="./images/pHscale.png" class="zoomScrollImg"></div>
+            <div class="floatRight"><img src="./images/pHscale.png" class="zoomScrollImg" style="max-width:35vw;"></div>
             <!--<div class="floatRight"><img src="./images/pHscaleObjects.png" class="zoomScrollImg"></div>-->
         </div>
-
+        <div style="height:100px;width:100vw;"></div> <!--Spacer-->
         <h1 class="title right">WHAT ARE BUFFERS?</h1>
         <div class=section>
+            <div class="textBox"><img src="./images/BufferGraph.png" class="zoomScrollImg" style="max-width:50vw; max-height:50vh;margin-top:-5lh;"></div>
             <div class="textBoxRight">
                 <p>A buffer is an aqueous solution that resists change in pH when adding acid/base in small amounts. Buffers usually consist of a weak acid and its conjugate base, or a weak base and its conjugate acid. 
-                    <br><br>In the human body, buffer systems often help prevent suddent changes in blood pH, allowing various biological processes to continue under stable conditions.
+                    <br><br>In the human body, buffer systems often help prevent sudden changes in blood pH, allowing various biological processes to continue under stable conditions.
                     <img src="./images/BufferExample.png" class="zoomScrollImg" style="max-height:30vh; display:block;">
                 </p>
             </div>
         </div>
 
+        <div style="height:100px;width:100vw;"></div> <!--Spacer-->
+
         <br id="Two"><br><br>
         <p class="sectionHead">02 The Science Behind pH Regulation</p>
         <h1 class="title">CARBONIC ACID-BICARBONATE BUFFER SYSTEM</h1>
         <div class="textBox">
-            <p>The primary blood buffer system consists of carbonic acid (H<span class="subscript">2</span>CO<span class="subscript">3</span>) and bicarboniate ions (HCO<span class="subscript">3</span><span class="superscript">-</span>). 
+            <p>The blood buffer is a prime example of <span style="font-weight:bold;">pH homeostasis</span> - that is, regulating pH to keep conditions stable. 
+                <br><br>The primary blood buffer system consists of carbonic acid (H<span class="subscript">2</span>CO<span class="subscript">3</span>) and bicarboniate ions (HCO<span class="subscript">3</span><span class="superscript">-</span>). 
                 <br><br>These substances participate in reversible reactions, allowing the system to regulate any changes in acidity and keep a stable blood pH.
                 <br><br>The human body carries more than 15 moles of carbon dioxide (CO<span class="subscript">2</span>) from its tissues to its lungs each day. This carbon dioxide can dissolve in the water in blood, where it reacts to form carbonic acid (H<span class="subscript">2</span>CO<span class="subscript">3</span>).
                 <br><br>Carbonic acid will react with water to form hydronium ions, so an increase in the amount of dissolved CO<span class="subscript">2</span> will make the blood more acidic. 
             </p>
             
         </div>
-        <img src="./images/Diagram.png" class="zoomScrollImg" style="max-width:40vw; max-height:25vh;">
+        <img src="./images/Diagram.png" class="zoomScrollImg" style="max-width:40vw; max-height:15lh;">
 
-        <br>
+        <div style="height:100px;width:100vw;"></div> <!--Spacer-->
         <h1 class="title" style="text-align:center; margin-left:auto;" id="reactions">The Chemical Reactions</h1>
         <div class="textBox" style="width:80vw; max-width:80vw; text-align:center;">
             <p>
-                The blood buffer is made up of several chemical reactions: 
+                The blood buffer includes the following chemical reactions: 
                 <br><br>
                 <button onclick="myFunctionNotMoving()">React</button>
                 <button style="margin-left:20px;" onclick="clearAll(); addAll();">Reset</button>
@@ -100,54 +104,94 @@
                     <span class="h2o hidden">window.innerWidth/3.0+160 30 3 false</span>
                 </div>
                 <br>
+            </p>
+            <!--<img src="./images/AcidBaseInBlood.png">-->
+        </div>
 
+        <div style="height:100px;width:100vw;"></div> <!--Spacer-->
+        <h1 class="title right">HOW DOES THE BUFFER REGULATE CHANGES IN pH?</h1>
+        <div class="section">
+            <div class="textBoxRight">
+                <p>The carbonic acid and it's conjugate base help regulate blood pH by reacting with any added acid/base.
+                </p>
+                <h2>WHAT HAPPENS WHEN ACID IS ADDED?</h2>
+                <p>
+                    When acid is added and enters the bloodstream, the concentration of hydronium ion (H<span class="subscript">3</span>O<span class="superscript">+</span>) increases, which makes pH decrease. This leads to an excess of hydronium ions, so bicarbonate ions will react with some of these excess ions to form carbonic acid and water. This is the reverse of the 2nd reaction, which can be observed above.
+                    <br><br>As a result of consuming this excess hydronium, the buffer reduces the amount by which the pH decreases.
+                </p>
+                <h2>WHAT HAPPENS WHEN BASE IS ADDED?</h2>
+                <p>
+                    Likewise, when a base enters the blood, hydroxide ions increase, causing pH to increase. Carbonic acid will then react with these excess ions to form bicarbonate ions and water. This is the reverse of the 3rd reaction.
+
+                    <br><br>By consuming some of the added hydroxide ions, the buffer reduces the amount by which the pH increases.
+                </p>
+                <p style="font-style:italic;">Together, carbonic acid and bicarbonate ions work to maintain a steady pH and minimize changes in blood pH caused by added acids or bases.</p>
+            </div>
+            <img src="./images/AcidBase.png" class="zoomScrollImg" style="max-height:24lh;max-width:40vw;margin-left:10vw;margin-top:-20px;">
+        </div>
+
+        <div style="height:100px;width:100vw;"></div> <!--Spacer-->
+
+        <br id="Three"><br><br>
+        <p class="sectionHead" >03 Chemical Equilibrium and Le Chatelier's Principle</p>
+        <h1 class="title">WHAT IS EQUILIBRIUM?</h1>
+        <div class="textBox">
+            <p>Equilibrium occurs when there is no net change of a reaction. As such, dynamic equilibrium occurs when the rate of the forward reaction is equal to the rate of the reverse reaction. Since many chemical reactions are reversible and thus bidirectional, almost all reactions can establish equilibrium. 
+                <br><br>It is important to note that although the net change is zero, both the forward and reverse reactions are occurring simultaneously, simply at the same rate. 
+                <br><br>It is also possible for several reactions to be in equilibrium together at the same time, like in the case of the blood buffer. When this occurs, a shift in the equilibrium of one reaction can cause the other reactions to shift as well. 
             </p>
         </div>
-        <br>
-        <h1 class="title">HOW DOES THE BUFFER REGULATE CHANGES IN pH?</h1>
-        <div class="textBox">
-            <p>The carbonic acid and it's conjugate base help regulate blood pH by reacting with any added acid/base.
-            </p>
-            <h2>WHAT HAPPENS WHEN ACID IS ADDED?</h2>
-            <p>When acid is added and enters the bloodstream, the concentration of hydronium ion (H<span class="subscript">3</span>O<span class="superscript">+</span>) increases, which makes pH decrease. There’s an excess of hydronium ions, so bicarbonate ions will react with some of these excess ions to form carbonic acid and water. This is the reverse of the 2nd reaction, which can be observed above.
-                <br><br>As a result of consuming this excess hydronium, the buffer reduces the decrease in pH.
-            </p>
-            <h2>WHAT HAPPENS WHEN BASE IS ADDED?</h2>
-            <p>
-                Likewise, when a base enters the blood, hydroxide ions are in excess, causing pH to increase. Carbonic acid will then react with these excess ions to form bicarbonate ions and water. This is the reverse of the 3rd reaction.
-                <br><br>By consuming some of the added hydroxide ions, the buffer reduces the increase in pH.
-            </p>
-            </div>
-        
-        <br><br>
+        <img src="./images/ChemicalEquilibrium.png" class="zoomScrollImg" style="max-width:40vw; max-height:15lh; margin-left:5vw;">
+        <div style="height:100px;width:100vw;"></div> <!--Spacer-->
 
+        <h1 class="title right">HOW DOES LE CHATELIER'S PRINCIPLE APPLY?</h1>
+        <div class="textBox" style="text-align: center; display:inline-block; margin-left:8vw;">
+            <p>Recall that the three formulas are:
+                <br>CO<span class="subscript">2(aq)</span> + H<span class="subscript">2</span>O<span class="subscript">(l)</span> ↔ H<span class="subscript">2</span>CO<span class="subscript">3(aq)</span>
+                <br>H<span class="subscript">2</span>CO<span class="subscript">3</span> + H<span class="subscript">2</span>O ↔ H<span class="subscript">3</span>O<span class="superscript">+</span> + HCO<span class="subscript">3</span><span class="superscript">-</span>
+                <br>HCO<span class="subscript" id="3">3</span><span class="superscript">-</span> + H<span class="subscript">2</span>O ↔ H<span class="subscript">2</span>CO<span class="subscript">3</span> + OH<span class="superscript">-</span>
+            </p>
+            <img src="./images/BjerrumPlot.png" style="max-width: 40vw;">
+        </div>
+        <div class="textBoxRight">
+            <p>
+                All three equations are in equilibrium at once, each impacting the others with their shifts. 
+                <br><br>Let’s say there’s an increase in the concentration of CO2, which thus causes equation 1 to shift right. This increases the concentration of H2CO3, which makes the bloodstream more acidic as it causes equation two to shift right, thus producing more hydronium ions. However, this also produces more bicarbonate ions, which then react with water to increase the concentration of carbonic acid, causing equation 1 to shift left, especially since carbonic acid is unstable in water. 
+                <br><br>Note that in the Bjerrum plot, the concentrations don’t quite reach zero, they simply dip down to very, very small concentrations. The plot itself is a representation of equilibrium concentrations as a function of pH. The pH of blood is around 7.2-7.4, which is represented with the green segment. 
+                <br><br>It is also worth noting that carbonic acid is a diprotic acid, but since the concentration of carbonate ions is extremely small in the relevant range, it can essentially be treated like a monoprotic acid when it comes to blood. 
+            </p>
+        </div>
+        
         <!--
         COPY THIS for subscripts: <span class="subscript">2</span>
         COPY THIS for superscripts: <span class="superscript">2</span>
         -->
 
-        <h2 class="sectionHead" id="Three">Section Three</h2>
-
-        <button id="test">Test</button>
-        <button id="Cancel">Cancel</button>
-        <button id="Debug">Debug</button>
-            <br>
-        <button style="display:block; text-align:center; margin:auto;" id="addMolecule" onclick="addRandomMolecule()">Add Molecule</button>
+        <br>
+        <div style="text-align: center;">
+            <button id="addMolecule" onclick="addRandomMolecule()">Add Molecule</button>
+            <button id="Cancel">Stop Animation</button>
+            <button id="startAnimation">Start Animation</button>
+            <button id="reset">Reset</button>
+        </div>
             <br>
         <img src="./images/BloodVesselWalls.png" style="transform:rotate(180deg); min-width:100vw;">
         <span style="display:block;background-color:#f1c9c9; height:65vh; width:120vw; margin:-90px; margin-bottom:-65vh; margin-top:-40px; z-index:-2;"></span>
-        <div class="moleculeDiv" id = "10" style="margin-bottom:60px; margin-top:30px; width:100vw; height:calc(45vh); position:relative;"> <!-- Molecules! -->
+        <div class="moleculeDiv" id = "10" style="margin-bottom:60px; margin-top:30px; width:100vw; height:45vh; position:relative;"> <!-- Molecules! -->
             <span class="co2 hidden">100 100 10 true</span>
             <span class="h2o hidden">199 100 10 true</span>
             <span class="h2o hidden">410 100 10 true</span>
             <span class="h2co3 hidden">500 100 10 true</span>
             <span class="h3o hidden">210 250 10 true</span>
             <span class="hco3 hidden">300 250 10 true</span>
+            <span class="hidden" id="Placeholder"></span>
         </div>
         <img src="./images/BloodVesselWalls.png" style="min-width:100vw;">
 
         <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
         <p style="text-align:center;">Please note: no part of this website was made with AI</p>
         <br><br><br>
+
+        <button id="Debug">Debug</button>
     </body>
 </html>
