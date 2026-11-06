@@ -799,7 +799,7 @@ function myFunction() {
     });
     counter = 0;
     h2co3s.forEach(h2co3 => {
-        let mynumber = getRandom(0, 1000); //Get number from 100-0
+        let mynumber = getRandom(0, 500); //Get random number
         if (mynumber == 1 && !h2co3Used.includes(counter) && h2co3.moving == true) {
             h2co3Used.push(counter);
             h2co3.decompose();
@@ -992,7 +992,7 @@ function animate() {
     allAnimationId = requestAnimationFrame(() => animate());
 }
 
-document.getElementById("Debug").addEventListener("click", () => {
+/*document.getElementById("Debug").addEventListener("click", () => {
     console.log("Debug starts here");
     h2os.forEach(molecule => {
         console.log(molecule);
@@ -1012,7 +1012,7 @@ document.getElementById("Debug").addEventListener("click", () => {
     ohs.forEach(molecule => {
         console.log(molecule);
     });
-});
+});*/
 
 function getDistance([x1, y1], [x2, y2]) {
     return Math.sqrt((x1-x2)**2+(y1-y2)**2);
